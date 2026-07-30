@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import asphaltTexture from "./textures/asphalt.jpg";
+import asphaltTexture from "./asphalt.jpg";
 
 
 const scene = new THREE.Scene();
