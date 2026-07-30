@@ -66,8 +66,14 @@ pointLight.position.z -= 2;
 scene.add(pointLight);
 const roadGeometry = new THREE.PlaneGeometry(10, 150);
 
+const textureLoader = new THREE.TextureLoader();
+const roadTexture = textureLoader.load('./assets/textures/asphalt.jpg');
+roadTexture.wrapS = THREE.RepeatWrapping;
+roadTexture.wrapT = THREE.RepeatWrapping;
+roadTexture.repeat.set(1, 15);
+
 const roadMaterial = new THREE.MeshStandardMaterial({
-  color: 0x222222
+  map: roadTexture
 });
 
 const road = new THREE.Mesh(roadGeometry, roadMaterial);
