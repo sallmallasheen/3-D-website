@@ -1,6 +1,13 @@
 import * as THREE from "three";
 import asphaltTexture from "./asphalt.jpg";
 
+let started = false;
+
+const enterBtn = document.getElementById("enterBtn");
+
+enterBtn.addEventListener("click", () => {
+  started = true;
+});
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(0x000000, 20, 140);
@@ -118,6 +125,10 @@ let stage = 0;
 function animate() {
 
   requestAnimationFrame(animate);
+  if (!started) {
+    renderer.render(scene, camera);
+    return;
+}
 
   if (stage === 0) {
 
