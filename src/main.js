@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import asphaltTexture from "./textures/asphalt.jpg";
 
 
 const scene = new THREE.Scene();
@@ -67,7 +68,7 @@ scene.add(pointLight);
 const roadGeometry = new THREE.PlaneGeometry(10, 150);
 
 const textureLoader = new THREE.TextureLoader();
-const roadTexture = textureLoader.load('./textures/asphalt.jpg');
+const roadTexture = textureLoader.load(asphaltTexture);
 roadTexture.wrapS = THREE.RepeatWrapping;
 roadTexture.wrapT = THREE.RepeatWrapping;
 roadTexture.repeat.set(1, 15);
